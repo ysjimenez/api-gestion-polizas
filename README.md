@@ -28,33 +28,61 @@ Se utilizó una arquitectura en capas inspirada en Domain Driven Design
 
 # Estructura del Proyecto
 
+## 📂 Estructura del proyecto
+
+```text
 polizas-api
-│
 ├── .mvn
-│
 ├── src
 │   └── main
-│       └── java
-│           └── com.segurosbolivar.polizas
-│
-│               ├── application
-│               ├── config
-│               ├── controller
-│               ├── domain
-│               ├── dto
-│               ├── exception
-│               ├── integration
-│               ├── repository
-│               ├── security
-│               └── PolizasApiApplication.java
-│
+│       ├── java
+│       │   └── com
+│       │       └── segurosbolivar
+│       │           └── polizas
+│       │               ├── application
+│       │               │   └── PolizaApplicationService.java
+│       │               ├── config
+│       │               │   └── GlobalExceptionHandler.java
+│       │               ├── controller
+│       │               │   ├── CoreMockController.java
+│       │               │   ├── PolizaController.java
+│       │               │   └── RiesgoController.java
+│       │               ├── domain
+│       │               │   ├── model
+│       │               │   │   ├── EstadoPoliza.java
+│       │               │   │   ├── EstadoRiesgo.java
+│       │               │   │   ├── Poliza.java
+│       │               │   │   ├── Riesgo.java
+│       │               │   │   └── TipoPoliza.java
+│       │               │   └── service
+│       │               │       └── PolizaDomainService.java
+│       │               ├── dto
+│       │               │   ├── CrearRiesgoRequest.java
+│       │               │   ├── PolizaResponse.java
+│       │               │   └── RiesgoResponse.java
+│       │               ├── exception
+│       │               │   └── BusinessException.java
+│       │               ├── integration
+│       │               │   ├── CoreClient.java
+│       │               │   └── NotificationService.java
+│       │               ├── repository
+│       │               │   ├── PolizaRepository.java
+│       │               │   └── RiesgoRepository.java
+│       │               ├── security
+│       │               │   └── ApiKeyFilter.java
+│       │               └── PolizasApiApplication.java
 │       └── resources
 │           ├── application.yml
 │           └── data.sql
-│
 ├── test
-├── pom.xml
-└── README.md
+├── target
+├── .gitattributes
+├── .gitignore
+├── HELP.md
+├── mvnw
+├── mvnw.cmd
+└── pom.xml
+```
 
 # 3. Seguridad
 
